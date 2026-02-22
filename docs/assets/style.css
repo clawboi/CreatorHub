@@ -1,0 +1,7 @@
+body{font-family:Arial;margin:0;background:#0f0f0f;color:white}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:#111;position:sticky;top:0}
+button{margin:4px;padding:10px 14px;border:none;background:#7c3aed;color:white;border-radius:8px;cursor:pointer}
+.hidden{display:none}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center}
+.modalBox{background:#181818;padding:30px;border-radius:14px;display:flex;flex-direction:column;gap:10px;width:260px}
+input{padding:10px;border-radius:8px;border:none}
