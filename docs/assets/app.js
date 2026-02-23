@@ -915,8 +915,6 @@ async function loadAvailabilityChips(userId, state){
       loadAvailabilityChips(userId, state);
     });
   });
-}
-
 
 async function createPackage(){
   const status = byId('createStatus');
