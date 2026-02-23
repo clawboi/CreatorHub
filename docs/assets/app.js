@@ -43,10 +43,6 @@ function refreshCurrentPage(){
   }catch(_e){}
 }
 
-
-};
-
-
 function parseAddonsWithPricing(lines){
   // Accept formats:
   //  - "BTS reel | 100"
