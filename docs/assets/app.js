@@ -1108,7 +1108,7 @@ async function createPackage(){
   byId('cVideo').value = '';
 }
 
-async async function loadProjects(){
+async function loadProjects(){
   if(!APP.session?.user) return;
   const wrap = byId('projects');
   const empty = byId('projectsEmpty');
