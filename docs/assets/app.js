@@ -912,7 +912,7 @@ async function loadAvailabilityChips(userId, state){
     b.addEventListener('click', ()=>{
       state.requested_date = b.dataset.pickdate;
       const inp = byId('rqDate'); if(inp) inp.value = state.requested_date;
-      loadAvailabilityChips(userId, state); } catch(e) { /* ignore */ }
+      loadAvailabilityChips(userId, state);
     });
   });
 }
