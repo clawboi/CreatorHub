@@ -21,7 +21,7 @@ const APP = {
   msgTab: 'pending',
   projectsTab: 'pending',
   _busyBooking:false,
-
+};
 
 
 function requireAuth(){
