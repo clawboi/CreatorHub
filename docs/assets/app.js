@@ -1439,7 +1439,6 @@ async function loadMessages(){
     const c = byId('msgThreadCount');
     if(c){ c.style.display='inline-flex'; c.textContent = list.length + ' threads'; }
   }
-}
 
 
 
