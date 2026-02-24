@@ -70,10 +70,6 @@ async function refreshCurrentPage(){
   APP._refreshing = false;
 }
 
-
-};
-
-
 function parseAddonsWithPricing(lines){
   // Accept formats:
   //  - "BTS reel | 100"
