@@ -165,7 +165,6 @@ function showPage(name){
     else loadProfile().then(()=>setProfileTab(APP.profileTab||'posts')).catch(()=>{});
   }
 }
-}
 
 function renderAuthBits(){
   const authed = !!APP.session?.user;
