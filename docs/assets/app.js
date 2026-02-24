@@ -164,7 +164,7 @@ function showPage(name){
     if(uid) loadProfileView(uid).then(()=>setProfileTab(APP.profileTab||'posts')).catch(()=>{});
     else loadProfile().then(()=>setProfileTab(APP.profileTab||'posts')).catch(()=>{});
   }
-); }
+}
 }
 
 function renderAuthBits(){
