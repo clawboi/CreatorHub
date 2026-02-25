@@ -2286,7 +2286,7 @@ document.addEventListener("visibilitychange", async () => {
 
     if (session?.user) {
       APP.session = session;
-      await loadMe();        // reload profile
+      await loadProfileView(APP.session.user.id);        // reload profile
       renderAuthBits();      // redraw UI
     }
   }
