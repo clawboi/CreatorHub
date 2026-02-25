@@ -2304,10 +2304,15 @@ document.addEventListener("visibilitychange", async () => {
 });
 
     if (session?.user) {
-      APP.session = session;
-      await loadProfileView(APP.session.user.id);        // reload profile
-      renderAuthBits();      // redraw UI
-    }
+  APP.session = session;
+
+  // make sure this is safe and awaited correctly
+  if (typeof loadProfileView === "function") {
+    await loadProfileView(APP.session.user.id);
+  }
+
+  renderAuthBits();
+}
   }
 });
 
