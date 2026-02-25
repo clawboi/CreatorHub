@@ -72,15 +72,21 @@ if(!window.__CH_LOCK_GUARD__){
     }
   });
 }
-const sleep = (ms)=>new Promise(r=>setTimeout(r, ms));
+'use strict';
 
+// --------- LockManager tab-resume guard ---------
+const sleep = window.sleep || ((ms)=>new Promise(r=>setTimeout(r, ms)));
+window.sleep = sleep;
+
+// --------- helpers ---------
 const $  = (sel, root=document) => root.querySelector(sel);
 const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
 const byId = (id) => document.getElementById(id);
 const esc = (s="") => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const isEmail = (s="") => /.+@.+\..+/.test(String(s).trim());
 
-let APP = {};
+// --------- app state ---------
+const APP = {
   sb: null,
   session: null,
   me: null,        // profile row
