@@ -2278,6 +2278,20 @@ async function signOut(){
   showPage('home');
 }
 
+document.addEventListener("visibilitychange", async () => {
+  if (document.visibilityState === "visible") {
+    if (!APP.sb) return;
+
+    const { data:{ session } } = await APP.sb.auth.getSession();
+
+    if (session?.user) {
+      APP.session = session;
+      await loadMe();        // reload profile
+      renderAuthBits();      // redraw UI
+    }
+  }
+});
+
 // boot
 init().catch((e)=>{
   console.error(e);
