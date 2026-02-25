@@ -379,10 +379,8 @@ async function init(){
   window.addEventListener('focus', _onResume);
   window.addEventListener('online', _onResume);
   window.addEventListener('pageshow', (e)=>{ if(e.persisted) _onResume(); });
-
 }
-
-
+}
 
 function wireUI(){
   // Single delegated click handler for the whole app
