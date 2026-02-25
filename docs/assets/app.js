@@ -63,8 +63,8 @@ function _buildSupabaseClient(){
       persistSession: true,
       autoRefreshToken: true,
       detectSessionInUrl: true,
-      storage: window.localStorage
-      // keep default storageKey (sb-<ref>-auth-token); singleton prevents multi-client collisions
+      storage: window.localStorage,
+      multiTab:false
     }
   });
   return window.__CH_SB__;
