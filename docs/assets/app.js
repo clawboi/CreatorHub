@@ -75,8 +75,6 @@ if(!window.__CH_LOCK_GUARD__){
 'use strict';
 
 // --------- LockManager tab-resume guard ---------
-const sleep = window.sleep || ((ms)=>new Promise(r=>setTimeout(r, ms)));
-window.sleep = sleep;
 
 // --------- helpers ---------
 const $  = (sel, root=document) => root.querySelector(sel);
