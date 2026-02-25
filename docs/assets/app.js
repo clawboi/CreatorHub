@@ -2278,11 +2278,30 @@ async function signOut(){
   showPage('home');
 }
 
+let __resumeLock=false;
 document.addEventListener("visibilitychange", async () => {
-  if (document.visibilityState === "visible") {
-    if (!APP.sb) return;
-
-    const { data:{ session } } = await APP.sb.auth.getSession();
+  if(document.visibilityState!=="visible") return;
+  if(__resumeLock) return;
+  __resumeLock=true;
+  try{
+    if(!APP?.sb?.auth) return;
+    const res = await APP.sb.auth.getSession();
+    const session = res?.data?.session;
+    if(session?.user){
+      APP.session=session;
+      if(typeof loadProfileView==="function"){
+        await loadProfileView(session.user.id);
+      }
+      if(typeof renderAuthBits==="function"){
+        renderAuthBits();
+      }
+    }
+  }catch(e){
+    console.warn("resume sync skipped",e);
+  }finally{
+    setTimeout(()=>{__resumeLock=false;},1500);
+  }
+});
 
     if (session?.user) {
       APP.session = session;
