@@ -1,7 +1,5 @@
 'use strict';
 
-const
-
 // --------- LockManager tab-resume guard ---------
 const sleep = (ms)=>new Promise(r=>setTimeout(r,ms));
 
