@@ -72,7 +72,7 @@ if(!window.__CH_LOCK_GUARD__){
     }
   });
 }
- sleep = (ms)=>new Promise(r=>setTimeout(r, ms));
+const sleep = (ms)=>new Promise(r=>setTimeout(r, ms));
 
 const $  = (sel, root=document) => root.querySelector(sel);
 const $$ = (sel, root=document) => Array.from(root.querySelectorAll(sel));
@@ -80,7 +80,7 @@ const byId = (id) => document.getElementById(id);
 const esc = (s="") => String(s).replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const isEmail = (s="") => /.+@.+\..+/.test(String(s).trim());
 
-const APP = {
+let APP = {};
   sb: null,
   session: null,
   me: null,        // profile row
